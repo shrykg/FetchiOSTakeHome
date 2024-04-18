@@ -11,22 +11,28 @@ import SwiftUI
 struct RecipeListView: View {
     
     @StateObject var vm = RecipeListViewModel()
-    
+
     
     var body: some View {
+        
+        if let _ = vm.error {
+            Text("Failed to load recipe list")
+                .font(.title)
+        }
+        
         NavigationStack {
             GeometryReader { proxy in
                 ScrollView {
                     LazyVStack(alignment: .center) {
                         ForEach(vm.meals) { meal in
                             NavigationLink {
-                                Text("Destination")
+                                RecipeDetailView(mealId: meal.idMeal)
                             } label: {
                                 RecipeListRow(meal: meal, proxy: proxy)
                             }
                         }
                     }
-                }.navigationTitle("Desserts")
+                }.navigationTitle(Text("Desserts"))
             }
         }
        

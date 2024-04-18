@@ -7,16 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B74A75B22BD0701B0059BB13 /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A75B12BD0701B0059BB13 /* RecipeDetailView.swift */; };
+		B74A75B42BD07DAA0059BB13 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A75B32BD07DAA0059BB13 /* Recipe.swift */; };
+		B74A75B62BD0ADDF0059BB13 /* RecipeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A75B52BD0ADDF0059BB13 /* RecipeDetailViewModel.swift */; };
+		B74A75B92BD0AF640059BB13 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A75B82BD0AF640059BB13 /* APIService.swift */; };
+		B755CF7B2BD06CD00010420B /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B755CF7A2BD06CD00010420B /* Meal.swift */; };
+		B755CF7E2BD06D1A0010420B /* RecipeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B755CF7D2BD06D1A0010420B /* RecipeListViewModel.swift */; };
+		B755CF802BD06D7D0010420B /* RecipeListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B755CF7F2BD06D7D0010420B /* RecipeListRow.swift */; };
 		B78B956E2BCF44A600E38FBB /* FetchiOSTakeHomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78B956D2BCF44A600E38FBB /* FetchiOSTakeHomeApp.swift */; };
-		B78B95702BCF44A600E38FBB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78B956F2BCF44A600E38FBB /* ContentView.swift */; };
+		B78B95702BCF44A600E38FBB /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78B956F2BCF44A600E38FBB /* RecipeListView.swift */; };
 		B78B95722BCF44A800E38FBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B78B95712BCF44A800E38FBB /* Assets.xcassets */; };
 		B78B95752BCF44A800E38FBB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B78B95742BCF44A800E38FBB /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B74A75B12BD0701B0059BB13 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
+		B74A75B32BD07DAA0059BB13 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		B74A75B52BD0ADDF0059BB13 /* RecipeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewModel.swift; sourceTree = "<group>"; };
+		B74A75B82BD0AF640059BB13 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		B755CF7A2BD06CD00010420B /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		B755CF7D2BD06D1A0010420B /* RecipeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewModel.swift; sourceTree = "<group>"; };
+		B755CF7F2BD06D7D0010420B /* RecipeListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListRow.swift; sourceTree = "<group>"; };
 		B78B956A2BCF44A600E38FBB /* FetchiOSTakeHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FetchiOSTakeHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B78B956D2BCF44A600E38FBB /* FetchiOSTakeHomeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchiOSTakeHomeApp.swift; sourceTree = "<group>"; };
-		B78B956F2BCF44A600E38FBB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B78B956F2BCF44A600E38FBB /* RecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListView.swift; sourceTree = "<group>"; };
 		B78B95712BCF44A800E38FBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B78B95742BCF44A800E38FBB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -32,6 +46,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B74A75B72BD0AF4A0059BB13 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				B74A75B82BD0AF640059BB13 /* APIService.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		B755CF782BD06A0A0010420B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B755CF7F2BD06D7D0010420B /* RecipeListRow.swift */,
+				B78B956F2BCF44A600E38FBB /* RecipeListView.swift */,
+				B74A75B12BD0701B0059BB13 /* RecipeDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B755CF792BD06CA30010420B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B755CF7A2BD06CD00010420B /* Meal.swift */,
+				B74A75B32BD07DAA0059BB13 /* Recipe.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B755CF7C2BD06CF90010420B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B755CF7D2BD06D1A0010420B /* RecipeListViewModel.swift */,
+				B74A75B52BD0ADDF0059BB13 /* RecipeDetailViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		B78B95612BCF44A600E38FBB = {
 			isa = PBXGroup;
 			children = (
@@ -52,7 +102,10 @@
 			isa = PBXGroup;
 			children = (
 				B78B956D2BCF44A600E38FBB /* FetchiOSTakeHomeApp.swift */,
-				B78B956F2BCF44A600E38FBB /* ContentView.swift */,
+				B74A75B72BD0AF4A0059BB13 /* API */,
+				B755CF7C2BD06CF90010420B /* ViewModels */,
+				B755CF792BD06CA30010420B /* Models */,
+				B755CF782BD06A0A0010420B /* Views */,
 				B78B95712BCF44A800E38FBB /* Assets.xcassets */,
 				B78B95732BCF44A800E38FBB /* Preview Content */,
 			);
@@ -137,7 +190,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B78B95702BCF44A600E38FBB /* ContentView.swift in Sources */,
+				B755CF7E2BD06D1A0010420B /* RecipeListViewModel.swift in Sources */,
+				B74A75B22BD0701B0059BB13 /* RecipeDetailView.swift in Sources */,
+				B74A75B42BD07DAA0059BB13 /* Recipe.swift in Sources */,
+				B755CF802BD06D7D0010420B /* RecipeListRow.swift in Sources */,
+				B78B95702BCF44A600E38FBB /* RecipeListView.swift in Sources */,
+				B74A75B62BD0ADDF0059BB13 /* RecipeDetailViewModel.swift in Sources */,
+				B755CF7B2BD06CD00010420B /* Meal.swift in Sources */,
+				B74A75B92BD0AF640059BB13 /* APIService.swift in Sources */,
 				B78B956E2BCF44A600E38FBB /* FetchiOSTakeHomeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

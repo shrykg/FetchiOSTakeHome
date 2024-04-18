@@ -16,33 +16,27 @@ struct APIService {
     }
     
     static func fetchRecipeList() async throws -> [Meal] {
-        guard let url = URL(string: "https://themealdb.com/api/json/v1/1/filter.php?c=Dessert")
-        else {
-            throw APIError.BadURL
-        }
-                
-        let (data,response) = try await URLSession.shared.data(from:url)
-
-        if let statusCode = (response as? HTTPURLResponse)?.statusCode, !(200..<299 ~= statusCode) {
-            throw APIError.BadResponse(statusCode: statusCode)
-        }
-        let result = try JSONDecoder().decode(MealResults.self, from: data)
+        let result: MealResults = try await decode(urlString: "https://themealdb.com/api/json/v1/1/filter.php?c=Dessert")
         return result.meals
     }
     
     static func fetchRecipeDetail(mealId: String)  async throws -> Recipe{
-        guard let url = URL(string: "https://themealdb.com/api/json/v1/1/lookup.php?i=\(mealId)") else {
+        let recipeResult: RecipeDetail = try await decode(urlString: "https://themealdb.com/api/json/v1/1/lookup.php?i=\(mealId)")
+        if let recipe = recipeResult.meals.first {
+            return recipe
+        }
+        throw APIError.RecipeNotFound
+    }
+    
+    static private func decode<T: Codable>(urlString: String) async throws -> T {
+        guard let url = URL(string: urlString) else {
             throw APIError.BadURL
         }
         let (data,response) = try await URLSession.shared.data(from: url)
         if let statusCode = (response as? HTTPURLResponse)?.statusCode, !(200..<299 ~= statusCode) {
             throw APIError.BadResponse(statusCode: statusCode)
         }
-        let recipeResult = try JSONDecoder().decode(RecipeDetail.self, from: data)
-        if let recipe = recipeResult.meals.first {
-            return recipe
-        }
-        throw APIError.RecipeNotFound
+        return try JSONDecoder().decode(T.self, from: data)
     }
 }
 
